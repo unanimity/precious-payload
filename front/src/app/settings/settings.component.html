@@ -1,0 +1,24 @@
+<div class="row justify-content-center header" >
+  <div class="col-sm-12 col-md-3 .col-lg-3">
+    <button mat-button color="primary" (click)="setRangeMonth()">Month</button>
+    <button mat-button color="primary" (click)="setRangeYear()">Year</button>
+    <button mat-button color="accent" (click)="setRangeCustom()">Custom</button>
+  </div>
+  <div class="col-sm-12 col-md-9 .col-lg-9">
+    <ng-container  *ngIf="customRange">
+      <mat-form-field appearance="fill">
+        <mat-label>From</mat-label>
+        <input matInput [matDatepicker]="picker_from" (dateChange)="onSetDateFrom($event)">
+        <mat-datepicker-toggle matSuffix [for]="picker_from"></mat-datepicker-toggle>
+        <mat-datepicker #picker_from></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>To</mat-label>
+        <input matInput [matDatepicker]="picker_to" (dateChange)="onSetDateTo($event)">
+        <mat-datepicker-toggle matSuffix [for]="picker_to"></mat-datepicker-toggle>
+        <mat-datepicker #picker_to></mat-datepicker>
+      </mat-form-field>
+    </ng-container>
+  </div>
+    <mat-progress-bar *ngIf= "inProcess"  mode="indeterminate"></mat-progress-bar>
+</div>

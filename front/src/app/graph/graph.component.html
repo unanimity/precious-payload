@@ -1,0 +1,12 @@
+<mat-card style="width: 938px; height: 469px; background-color: #f3edff" *ngIf="barChartData.length==0" ></mat-card>
+<mat-card>
+<div style="display: block" *ngIf="barChartData.length>0">
+        <canvas baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"
+        ></canvas>
+</div>
+</mat-card>

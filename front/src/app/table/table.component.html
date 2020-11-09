@@ -1,0 +1,16 @@
+<div *ngIf="dataSource.length===0" style="width: 470px; height: 496px; background-color: #f3edff"></div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="dataSource.length>0">
+    <ng-container *ngFor="let Column of displayedColumns">
+      <ng-container [matColumnDef]="Column" *ngIf="Column!=='marker'">
+        <th mat-header-cell *matHeaderCellDef> {{Column}} </th>
+        <td mat-cell *matCellDef="let element">
+          <p *ngIf="!element['marker' + Column] ">{{element[Column]}}</p>
+          <p *ngIf="element['marker' + Column]=='red'" style="color: red">{{element[Column]}}</p>
+          <p *ngIf="element['marker' + Column]=='green'" style="color: green">{{element[Column]}}</p>
+        </td>
+      </ng-container>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </table>

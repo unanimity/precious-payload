@@ -1,0 +1,10 @@
+.header {
+  background-color: #f3edff;
+  height: 52px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+button{
+  height: 52px;
+  margin-left: 15px;
+}
