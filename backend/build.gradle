@@ -18,6 +18,9 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+  compile 'org.jsoup:jsoup:1.13.1'
+  compile 'redis.clients:jedis:2.9.0'
+
 }
 
 test {
